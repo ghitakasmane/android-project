@@ -1,0 +1,55 @@
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main content -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Add a Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarr"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="?android:attr/textColorPrimary" />
+
+        <!-- Your existing layout components -->
+
+        <TextView
+            android:id="@+id/textViewListTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Engineer Profiles"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/toolbarr"
+            android:layout_marginBottom="16dp" />
+
+        <ListView
+            android:id="@+id/listViewEngineers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewListTitle"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="16dp" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="?android:attr/windowBackground"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu" />
+
+    <!-- Navigation drawer -->
+
+</androidx.drawerlayout.widget.DrawerLayout>

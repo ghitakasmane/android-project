@@ -1,0 +1,52 @@
+<!-- res/layout/activity_engineer_detail.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <TextView
+        android:id="@+id/textViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID: " />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: " />
+
+    <TextView
+        android:id="@+id/textViewFormations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Formations: " />
+
+    <TextView
+        android:id="@+id/textViewExperiences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Experiences: " />
+
+    <TextView
+        android:id="@+id/textViewSkills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skills: " />
+
+    <TextView
+        android:id="@+id/textViewInterests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interests: " />
+
+    <!-- Add other TextViews for additional details -->
+</LinearLayout>
+
