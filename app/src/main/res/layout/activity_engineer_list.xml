@@ -12,8 +12,9 @@
         android:layout_height="match_parent">
 
         <!-- Add a Toolbar -->
+
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarr"
+            android:id="@+id/toolbarlist"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -25,11 +26,13 @@
             android:id="@+id/textViewListTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbarlist"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="20dp"
             android:text="Engineer Profiles"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_below="@+id/toolbarr"
-            android:layout_marginBottom="16dp" />
+            android:textStyle="bold" />
 
         <ListView
             android:id="@+id/listViewEngineers"
@@ -47,7 +50,6 @@
 
     </RelativeLayout>
 
-
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -56,6 +58,7 @@
         android:background="?android:attr/windowBackground"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu" />
+
 
     <!-- Navigation drawer -->
 

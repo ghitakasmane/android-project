@@ -2,18 +2,24 @@ package com.example.project_test;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.project_test.ProfilDataSource;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.Date;
 
-public class AddEngineerProfileActivity extends AppCompatActivity {
+public class AddEngineerProfileActivity extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener{
 
     private ProfilDataSource dataSource;
 
@@ -21,7 +27,17 @@ public class AddEngineerProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_engineer_profile);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout_add);
+        NavigationView navigationView = findViewById(R.id.nav_view_add);
+        Toolbar toolbar = findViewById(R.id.toolbarlist_add);  // Add this line
+        setSupportActionBar(toolbar);  // Add this line
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
 
+
+        navigationView.setNavigationItemSelectedListener(this);
         // Initialize the database data source
         dataSource = new ProfilDataSource(this);
         dataSource.open();
@@ -39,6 +55,8 @@ public class AddEngineerProfileActivity extends AppCompatActivity {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 // Get user inputs
                 String name = editTextName.getText().toString();
                 String education = editTextEducation.getText().toString();
@@ -69,7 +87,24 @@ public class AddEngineerProfileActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        int id = item.getItemId();
 
+        if (id == R.id.nav_add_engineer) {
+            // Open the Add Engineer form
+            Intent intent = new Intent(AddEngineerProfileActivity.this, AddEngineerProfileActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.nav_list_engineer) {
+            Intent intent = new Intent(AddEngineerProfileActivity.this, EngineerListActivity.class);
+            startActivity(intent);
+        }
+
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

@@ -4,6 +4,10 @@
         <item
             android:id="@+id/nav_add_engineer"
             android:title="Add Engineer" />
+
+        <item
+            android:id="@+id/nav_list_engineer"
+            android:title="List Engineer" />
         <!-- Add more items as needed -->
     </group>
 </menu>

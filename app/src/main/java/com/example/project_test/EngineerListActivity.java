@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toolbar;
+//import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.View;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -32,12 +34,13 @@ public class EngineerListActivity extends AppCompatActivity implements  Navigati
         buttonAdd = (Button)findViewById(R.id.buttonAdd) ;
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        //Toolbar toolbarr = findViewById(R.id.toolbarr);  // Add this line
-//        setSupportActionBar(toolbarr);  // Add this line
+        Toolbar toolbar = findViewById(R.id.toolbarlist);  // Add this line
+        setSupportActionBar(toolbar);  // Add this line
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
 
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -99,6 +102,9 @@ public class EngineerListActivity extends AppCompatActivity implements  Navigati
         if (id == R.id.nav_add_engineer) {
             // Open the Add Engineer form
             Intent intent = new Intent(EngineerListActivity.this, AddEngineerProfileActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_list_engineer) {
+            Intent intent = new Intent(EngineerListActivity.this, EngineerListActivity.class);
             startActivity(intent);
         }
 
