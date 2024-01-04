@@ -32,9 +32,8 @@ public class EngineerListActivity extends AppCompatActivity implements  Navigati
         buttonAdd = (Button)findViewById(R.id.buttonAdd) ;
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-//        Toolbar toolbarr = findViewById(R.id.toolbarr);  // Add this line
-//
-//        setSupportActionBar(toolbar);  // Add this line
+        Toolbar toolbarr = findViewById(R.id.toolbarr);  // Add this line
+//        setSupportActionBar(toolbarr);  // Add this line
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
