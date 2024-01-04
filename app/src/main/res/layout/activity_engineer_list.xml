@@ -11,14 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Add a Toolbar -->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarr"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:titleTextColor="?android:attr/textColorPrimary" />
-
         <!-- Your existing layout components -->
 
         <TextView
@@ -28,16 +20,15 @@
             android:text="Engineer Profiles"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_below="@+id/toolbarr"
             android:layout_marginBottom="16dp" />
 
         <ListView
             android:id="@+id/listViewEngineers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewListTitle"
             android:layout_marginTop="35dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            />
 
     </RelativeLayout>
 
