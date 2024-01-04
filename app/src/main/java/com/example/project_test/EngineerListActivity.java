@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toolbar;
+import android.view.View;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 public class EngineerListActivity extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener {
     private ProfilDataSource dataSource;
     private EngineerListAdapter adapter;
+    Button buttonAdd ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,7 @@ public class EngineerListActivity extends AppCompatActivity implements  Navigati
 
         dataSource = new ProfilDataSource(this);
         dataSource.open();
-
+        buttonAdd = (Button)findViewById(R.id.buttonAdd) ;
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 //        Toolbar toolbarr = findViewById(R.id.toolbarr);  // Add this line
@@ -69,6 +72,13 @@ public class EngineerListActivity extends AppCompatActivity implements  Navigati
             startActivity(intent);
         });
 
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent1 = new Intent(EngineerListActivity.this, AddEngineerProfileActivity.class);
+                startActivity(myIntent1);
+            }
+        });
     }
     private <T> T getColumnValue(Cursor cursor, String columnName, T defaultValue) {
         int columnIndex = cursor.getColumnIndex(columnName);

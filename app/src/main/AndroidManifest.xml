@@ -26,11 +26,9 @@
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".EngineerListActivity" -->
         <!-- android:label="Engineer List" /> -->
+
+
         <activity
-            android:name=".AddEngineerProfileActivity"
-            android:label="Engineer List" />
-        <!--
-  <activity
             android:name=".AddEngineerProfileActivity"
             android:exported="true">
             <intent-filter>
@@ -39,15 +37,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        -->
+
         <activity
             android:name=".EngineerListActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

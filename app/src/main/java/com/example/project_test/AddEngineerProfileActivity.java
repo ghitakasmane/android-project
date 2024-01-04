@@ -1,5 +1,6 @@
 package com.example.project_test;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.project_test.ProfilDataSource;
+
+import java.util.Date;
 
 public class AddEngineerProfileActivity extends AppCompatActivity {
 
@@ -30,6 +33,7 @@ public class AddEngineerProfileActivity extends AppCompatActivity {
         final EditText editTextSkills = findViewById(R.id.editTextSkills);
         final EditText editTextCentreInteret = findViewById(R.id.editTextCentreInteret);
         Button buttonSave = findViewById(R.id.buttonSave);
+        Button buttonBack = findViewById(R.id.buttonBack) ;
 
         // Save button click listener
         buttonSave.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +58,14 @@ public class AddEngineerProfileActivity extends AppCompatActivity {
                     Toast.makeText(AddEngineerProfileActivity.this,
                             "Failed to add engineer profile", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent1 = new Intent(AddEngineerProfileActivity.this, EngineerListActivity.class);
+                startActivity(myIntent1);
             }
         });
     }
